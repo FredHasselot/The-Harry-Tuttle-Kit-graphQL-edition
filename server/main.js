@@ -8,22 +8,16 @@ import { Helmet } from 'react-helmet';
 // GRAPHQL STUFF
 import { initialize } from 'meteor/cultofcoders:apollo';
 import { load } from 'graphql-load';
+import UserType from './gql/user.gql';
+import UserResolver from './resolvers/user.resolver';
 // RELATIVE IMPORTS
 import { Router } from '../imports/ui/router';
 // *****************************************************************************
 Meteor.startup(() => {
   // GRAPHQL ->
   load({
-    typeDefs: `
-      type Query {
-        sayHello: String
-      }
-    `,
-    resolvers: {
-      Query: {
-        sayHello: () => 'Hello world!',
-      },
-    },
+    typeDefs: [UserType],
+    resolvers: [UserResolver],
   });
   //
   initialize();
