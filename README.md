@@ -23,3 +23,7 @@ The app is rendering on both side. SSR & CSR.
 * apollo via https://github.com/cult-of-coders/apollo
 
 [For the time being]
+
+### To run temp tests stuff:
+
+TEST_WATCH=1 meteor test --driver-package meteortesting:mocha
