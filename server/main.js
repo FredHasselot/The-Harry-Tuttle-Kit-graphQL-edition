@@ -5,10 +5,30 @@ import { renderToString } from 'react-dom/server';
 import { onPageLoad } from 'meteor/server-render';
 import { StaticRouter } from 'react-router';
 import { Helmet } from 'react-helmet';
+// GRAPHQL STUFF
+import { initialize } from 'meteor/cultofcoders:apollo';
+import { load } from 'graphql-load';
 // RELATIVE IMPORTS
 import { Router } from '../imports/ui/router';
 // *****************************************************************************
 Meteor.startup(() => {
+  // GRAPHQL ->
+  load({
+    typeDefs: `
+      type Query {
+        sayHello: String
+      }
+    `,
+    resolvers: {
+      Query: {
+        sayHello: () => 'Hello world!',
+      },
+    },
+  });
+  //
+  initialize();
+  // ---------------------------------------------------------------------------
+  // SSR ->
   onPageLoad((sink) => {
     const App = props => {
       return (
