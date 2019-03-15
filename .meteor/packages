@@ -22,3 +22,5 @@ seba:minifiers-autoprefixer
 twbs:bootstrap
 cultofcoders:apollo
 swydo:graphql
+cultofcoders:grapher
+cultofcoders:grapher-schema-directives
