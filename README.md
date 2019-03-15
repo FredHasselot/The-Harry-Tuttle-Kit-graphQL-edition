@@ -8,7 +8,7 @@
 
 ```
 # Harry Tuttle Kit
-## A simple (but usefull) Meteor 1.8 starter kit 
+## A simple (but usefull) Meteor 1.8 starter kit with apollo support
 
 ![Image of Harry Tuttle](https://media.giphy.com/media/55bqPxog68ayLqEvc7/giphy.gif)
 
@@ -20,5 +20,6 @@ The app is rendering on both side. SSR & CSR.
 * react-router v4
 * react-helmet
 * react-bootstrap
+* apollo via https://github.com/cult-of-coders/apollo
 
 [For the time being]
